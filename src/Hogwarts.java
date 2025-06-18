@@ -32,18 +32,23 @@ public abstract class Hogwarts {
         return castScore + transgressScore;
     }
 
+    protected void compareBase(int thisSum, int otherSum, String msg, String msgEq, Hogwarts other) {
+        if (thisSum > otherSum) {
+            System.out.printf(msg, this.getFullName(), other.getFullName());
+        }
+        else if (thisSum < otherSum) {
+            System.out.printf(msg, other.getFullName(), this.getFullName());
+        }
+        else {
+            System.out.printf(msgEq, this.getFullName(), other.getFullName());
+        }
+    }
+
     public void compare(Hogwarts hogwarts) {
         int thisSum = sumBasePoints();
         int otherSum = hogwarts.sumBasePoints();
-        String msg = "%s обладает большей мощностью магии, чем %s\n";
-        if (thisSum > otherSum) {
-            System.out.printf(msg, this.getFullName(), hogwarts.getFullName());
-        }
-        else if (thisSum < otherSum) {
-            System.out.printf(msg, hogwarts.getFullName(), this.getFullName());
-        }
-        else {
-            System.out.printf("Мощности магии %s и %s равны\n", this.getFullName(), hogwarts.getFullName());
-        }
+        String msg = "%s обладает большей мощностью магии, чем %s.\n";
+        String msgEq = "Мощности магии %s и %s равны.\n";
+        compareBase(thisSum, otherSum, msg, msgEq, hogwarts);
     }
 }

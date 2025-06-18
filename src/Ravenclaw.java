@@ -40,18 +40,21 @@ public class Ravenclaw extends Hogwarts{
         );
     }
 
-    public void compareRaveclaw(Ravenclaw ravenclaw) {
-        int thisSum = sumPoints();
-        int otherSum = ravenclaw.sumPoints();
-        String msg = "%s лучше, чем %s\n";
-        if (thisSum > otherSum) {
-            System.out.printf(msg, this.getFullName(), ravenclaw.getFullName());
-        }
-        else if (thisSum < otherSum) {
-            System.out.printf(msg, ravenclaw.getFullName(), this.getFullName());
+    @Override
+    public void compare(Hogwarts hogwarts) {
+        if (hogwarts instanceof Ravenclaw) {
+            this.compare((Ravenclaw) hogwarts);
         }
         else {
-            System.out.printf("%s и %s одинаково хороши\n", this.getFullName(), ravenclaw.getFullName());
+            super.compare(hogwarts);
         }
+    }
+
+    public void compare(Ravenclaw ravenclaw) {
+        int thisSum = sumPoints();
+        int otherSum = ravenclaw.sumPoints();
+        String msg = "%s лучше, чем %s.\n";
+        String msgEq = "%s и %s одинаково хороши.\n";
+        compareBase(thisSum, otherSum, msg, msgEq, ravenclaw);
     }
 }

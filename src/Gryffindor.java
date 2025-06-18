@@ -34,18 +34,21 @@ public class Gryffindor extends Hogwarts {
         );
     }
 
-    public void compareGryffindor(Gryffindor gryffindor) {
-        int thisSum = sumPoints();
-        int otherSum = gryffindor.sumPoints();
-        String msg = "%s лучше, чем %s\n";
-        if (thisSum > otherSum) {
-            System.out.printf(msg, this.getFullName(), gryffindor.getFullName());
-        }
-        else if (thisSum < otherSum) {
-            System.out.printf(msg, gryffindor.getFullName(), this.getFullName());
+    @Override
+    public void compare(Hogwarts hogwarts) {
+        if (hogwarts instanceof Gryffindor) {
+            this.compare((Gryffindor) hogwarts);
         }
         else {
-            System.out.printf("%s и %s одинаково хороши\n", this.getFullName(), gryffindor.getFullName());
+            super.compare(hogwarts);
         }
+    }
+
+    public void compare(Gryffindor gryffindor) {
+        int thisSum = sumPoints();
+        int otherSum = gryffindor.sumPoints();
+        String msg = "%s лучше, чем %s.\n";
+        String msgEq = "%s и %s одинаково хороши.\n";
+        compareBase(thisSum, otherSum, msg, msgEq, gryffindor);
     }
 }

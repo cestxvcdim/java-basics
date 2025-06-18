@@ -34,18 +34,21 @@ public class Hufflepuff extends Hogwarts{
         );
     }
 
-    public void compareHufflepuff(Hufflepuff hufflepuff) {
-        int thisSum = sumPoints();
-        int otherSum = hufflepuff.sumPoints();
-        String msg = "%s лучше, чем %s\n";
-        if (thisSum > otherSum) {
-            System.out.printf(msg, this.getFullName(), hufflepuff.getFullName());
-        }
-        else if (thisSum < otherSum) {
-            System.out.printf(msg, hufflepuff.getFullName(), this.getFullName());
+    @Override
+    public void compare(Hogwarts hogwarts) {
+        if (hogwarts instanceof Hufflepuff) {
+            this.compare((Hufflepuff) hogwarts);
         }
         else {
-            System.out.printf("%s и %s одинаково хороши\n", this.getFullName(), hufflepuff.getFullName());
+            super.compare(hogwarts);
         }
+    }
+
+    public void compare(Hufflepuff hufflepuff) {
+        int thisSum = sumPoints();
+        int otherSum = hufflepuff.sumPoints();
+        String msg = "%s лучше, чем %s.\n";
+        String msgEq = "%s и %s одинаково хороши.\n";
+        compareBase(thisSum, otherSum, msg, msgEq, hufflepuff);
     }
 }

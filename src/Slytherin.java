@@ -47,18 +47,21 @@ public class Slytherin extends Hogwarts{
         );
     }
 
-    public void compareSlytherin(Slytherin slytherin) {
-        int thisSum = sumPoints();
-        int otherSum = slytherin.sumPoints();
-        String msg = "%s лучше, чем %s\n";
-        if (thisSum > otherSum) {
-            System.out.printf(msg, this.getFullName(), slytherin.getFullName());
-        }
-        else if (thisSum < otherSum) {
-            System.out.printf(msg, slytherin.getFullName(), this.getFullName());
+    @Override
+    public void compare(Hogwarts hogwarts) {
+        if (hogwarts instanceof Slytherin) {
+            this.compare((Slytherin) hogwarts);
         }
         else {
-            System.out.printf("%s и %s одинаково хороши\n", this.getFullName(), slytherin.getFullName());
+            super.compare(hogwarts);
         }
+    }
+
+    public void compare(Slytherin slytherin) {
+        int thisSum = sumPoints();
+        int otherSum = slytherin.sumPoints();
+        String msg = "%s лучше, чем %s.\n";
+        String msgEq = "%s и %s одинаково хороши.\n";
+        compareBase(thisSum, otherSum, msg, msgEq, slytherin);
     }
 }

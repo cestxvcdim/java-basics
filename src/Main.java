@@ -20,26 +20,19 @@ public class Main {
 
         Chang.cast();
         Smith.transgress();
+        System.out.println();
 
-        System.out.println(Potter);
-        System.out.println(Malfoy);
+        printCompareStats(Potter, Malfoy);
+        printCompareStats(Granger, Weasley);
+        printCompareStats(Diggory, FinchFletchley);
+        printCompareStats(Patil, Belby);
+        printCompareStats(Montague, Goyle);
+    }
 
-        Potter.compare(Malfoy);
-
-        System.out.println(Granger);
-        System.out.println(Weasley);
-        Granger.compareGryffindor(Weasley);
-
-        System.out.println(Diggory);
-        System.out.println(FinchFletchley);
-        Diggory.compareHufflepuff(FinchFletchley);
-
-        System.out.println(Patil);
-        System.out.println(Belby);
-        Patil.compareRaveclaw(Belby);
-
-        System.out.println(Montague);
-        System.out.println(Goyle);
-        Montague.compareSlytherin(Goyle);
+    public static void printCompareStats(Hogwarts first, Hogwarts second) {
+        System.out.println(first);
+        System.out.println(second);
+        first.compare(second);
+        System.out.println();
     }
 }
