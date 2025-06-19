@@ -1,3 +1,5 @@
+package hogwarts;
+
 public class Slytherin extends Hogwarts{
     private final int cunning;
     private final int decisive;
@@ -41,7 +43,7 @@ public class Slytherin extends Hogwarts{
     @Override
     public String toString() {
         return String.format(
-                "Slytherin(castScore=%d, transgressScore=%d, cunning=%d, decisive=%d, ambitious=%d, resourceful=%d, bossy=%d)",
+                "hogwarts.Slytherin(castScore=%d, transgressScore=%d, cunning=%d, decisive=%d, ambitious=%d, resourceful=%d, bossy=%d)",
                 getCastScore(), getTransgressScore(), getCunning(), getDecisive(), getAmbitious(),
                 getResourceful(), getBossy()
         );

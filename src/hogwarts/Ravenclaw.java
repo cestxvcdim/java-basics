@@ -1,3 +1,5 @@
+package hogwarts;
+
 public class Ravenclaw extends Hogwarts{
     private final int smart;
     private final int wise;
@@ -35,7 +37,7 @@ public class Ravenclaw extends Hogwarts{
     @Override
     public String toString() {
         return String.format(
-                "Ravenclaw(castScore=%d, transgressScore=%d, smart=%d, wise=%d, witty=%d, creative=%d)",
+                "hogwarts.Ravenclaw(castScore=%d, transgressScore=%d, smart=%d, wise=%d, witty=%d, creative=%d)",
                 getCastScore(), getTransgressScore(), getSmart(), getWise(), getWitty(), getCreative()
         );
     }
