@@ -1,3 +1,5 @@
+package hogwarts;
+
 public class Main {
     public static void main(String[] args) {
         DataGenerator gen = new DataGenerator();

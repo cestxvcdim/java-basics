@@ -1,3 +1,5 @@
+package hogwarts;
+
 import java.lang.reflect.Constructor;
 import java.util.Random;
 

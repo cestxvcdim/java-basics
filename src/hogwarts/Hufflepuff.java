@@ -1,3 +1,5 @@
+package hogwarts;
+
 public class Hufflepuff extends Hogwarts{
     private final int hardworking;
     private final int loyal;
@@ -29,7 +31,7 @@ public class Hufflepuff extends Hogwarts{
     @Override
     public String toString() {
         return String.format(
-                "Hufflepuff(castScore=%d, transgressScore=%d, hardworking=%d, loyal=%d, honest=%d)",
+                "hogwarts.Hufflepuff(castScore=%d, transgressScore=%d, hardworking=%d, loyal=%d, honest=%d)",
                 getCastScore(), getTransgressScore(), getHardworking(), getLoyal(), getHonest()
         );
     }

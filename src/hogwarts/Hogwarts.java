@@ -1,3 +1,5 @@
+package hogwarts;
+
 public abstract class Hogwarts {
     private final int castScore;
     private final int transgressScore;

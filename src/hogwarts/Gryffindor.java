@@ -1,3 +1,5 @@
+package hogwarts;
+
 public class Gryffindor extends Hogwarts {
     private final int noble;
     private final int honor;
@@ -29,7 +31,7 @@ public class Gryffindor extends Hogwarts {
     @Override
     public String toString() {
         return String.format(
-                "Gryffindor(castScore=%d, transgressScore=%d, noble=%d, honor=%d, brave=%d)",
+                "hogwarts.Gryffindor(castScore=%d, transgressScore=%d, noble=%d, honor=%d, brave=%d)",
                 getCastScore(), getTransgressScore(), getNoble(), getHonor(), getBrave()
         );
     }
